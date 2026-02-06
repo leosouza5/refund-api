@@ -11,4 +11,16 @@ refundsRoutes.post(
   refundsController.create
 )
 
+refundsRoutes.get(
+  "/",
+  ensureAuthorized(["manager"]),
+  refundsController.index
+)
+
+refundsRoutes.get(
+  "/:id",
+  ensureAuthorized(["manager", "employee"]),
+  refundsController.show
+)
+
 export { refundsRoutes }
