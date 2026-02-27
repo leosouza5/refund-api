@@ -90,6 +90,6 @@ export class RefundsController {
       include: { user: true }
     })
 
-    return res.json({ refund })
+    return res.json( refund)
   }
 }
